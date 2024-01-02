@@ -142,7 +142,7 @@ namespace MagicUI.Behaviours
 
         private void DrawRect(Rect rect, Color color)
         {
-            float width = Mathf.Max(1, GetComponent<Canvas>().transform.GetScaleX());
+            float width = Mathf.Max(1, GetComponent<Canvas>().transform.localScale.x);
 
             float left = rect.xMin;
             float right = rect.xMax;

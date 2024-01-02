@@ -1,4 +1,4 @@
-﻿using Modding;
+﻿using System;
 using UnityEngine;
 
 namespace MagicUI.Core
@@ -14,19 +14,46 @@ namespace MagicUI.Core
         public static readonly Rect Screen = new(Vector2.zero, new Vector2(1920, 1080));
 
         /// <summary>
+        /// The Miso font
+        /// </summary>
+        public static Font Miso {
+            get {
+                if (miso == null)
+                {
+                    miso = GetFont("Miso");
+                }
+                return miso;
+            }
+        }
+
+        /// <summary>
         /// The Trajan Normal font
         /// </summary>
-        public static Font TrajanNormal { get => CanvasUtil.TrajanNormal; }
+        public static Font TrajanNormal => Miso;
 
         /// <summary>
         /// The Trajan Bold font
         /// </summary>
-        public static Font TrajanBold { get => CanvasUtil.TrajanBold; }
+        public static Font TrajanBold => Miso;
 
         /// <summary>
         /// The Perpetua font
         /// </summary>
-        public static Font Perpetua { get => CanvasUtil.GetFont("Perpetua"); }
+        public static Font Perpetua => Miso;
+
+        private static Font? miso;
+
+        private static Font GetFont(string name)
+        {
+            foreach (var f in Resources.FindObjectsOfTypeAll<Font>())
+            {
+                if (f != null && f.name == name)
+                {
+                    return f;
+                }
+            }
+            throw new InvalidOperationException($"{name} font not found");
+        }
 
         /// <summary>
         /// Converts a position in reference screen space to a unity position

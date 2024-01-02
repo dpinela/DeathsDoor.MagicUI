@@ -1,4 +1,4 @@
-﻿using Modding;
+﻿using BepInEx;
 using System;
 
 namespace MagicUI
@@ -6,7 +6,8 @@ namespace MagicUI
     /// <summary>
     /// Base mod class
     /// </summary>
-    public class MagicUIMod : Mod, IGlobalSettings<MagicUIGlobalSettings>
+    [BepInPlugin("deathsdoor.magicui", "MagicUI", "1.8")]
+    public class MagicUIMod : BaseUnityPlugin
     {
         private static MagicUIMod? instance;
         internal static MagicUIMod Instance
@@ -23,25 +24,16 @@ namespace MagicUI
         }
 
         /// <summary>
-        /// Global settings for the mod
-        /// </summary>
-        public MagicUIGlobalSettings GlobalSettings { get; private set; } = new();
-
-        /// <inheritdoc/>
-        public override string GetVersion() => GetType().Assembly.GetName().Version.ToString();
-
-        /// <summary>
         /// Instantiates the mod instance
         /// </summary>
-        public MagicUIMod() : base("MagicUI")
+        public MagicUIMod()
         {
             Instance = this;
         }
 
-        /// <inheritdoc/>
-        public void OnLoadGlobal(MagicUIGlobalSettings s) => GlobalSettings = s;
-
-        /// <inheritdoc/>
-        public MagicUIGlobalSettings OnSaveGlobal() => GlobalSettings;
+        internal void LogDebug(string msg)
+        {
+            Logger.LogDebug(msg);
+        }
     }
 }

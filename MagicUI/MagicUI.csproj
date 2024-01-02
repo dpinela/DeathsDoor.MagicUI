@@ -29,7 +29,6 @@
         <MakeDir Directories="$(ExportDir)/$(TargetName)/" />
         <MakeDir Directories="$(ExportDir)/$(TargetName)/zip/" />
         <MakeDir Condition="!Exists('$(HollowKnightRefs)/Mods/$(TargetName)/')" Directories="$(HollowKnightRefs)/Mods/$(TargetName)/" />
-        <Copy SourceFiles="$(TargetPath);$(TargetDir)/$(TargetName).pdb;$(TargetDir)/$(TargetName).xml" DestinationFolder="$(HollowKnightRefs)/Mods/$(TargetName)/" />
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ExportDir)/$(TargetName)/" />
         <Copy SourceFiles="../README.md;$(TargetPath);$(TargetDir)/$(TargetName).pdb;$(TargetDir)/$(TargetName).xml" DestinationFolder="$(ExportDir)/$(TargetName)/zip/" />
         <ZipDirectory SourceDirectory="$(ExportDir)/$(TargetName)/zip/" DestinationFile="$(ExportDir)/$(TargetName)/$(TargetName).zip" />
@@ -82,20 +81,8 @@
       <EmbeddedResource Include="Resources\Underline-2.png" />
     </ItemGroup>
     <ItemGroup>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>$(HollowKnightRefs)/Assembly-CSharp.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp-firstpass">
-            <HintPath>$(HollowKnightRefs)/Assembly-CSharp-firstpass.dll</HintPath>
-        </Reference>
         <Reference Include="GalaxyCSharp">
             <HintPath>$(HollowKnightRefs)/GalaxyCSharp.dll</HintPath>
-        </Reference>
-        <Reference Include="MMHOOK_Assembly-CSharp">
-            <HintPath>$(HollowKnightRefs)/MMHOOK_Assembly-CSharp.dll</HintPath>
-        </Reference>
-        <Reference Include="MMHOOK_PlayMaker">
-            <HintPath>$(HollowKnightRefs)/MMHOOK_PlayMaker.dll</HintPath>
         </Reference>
         <Reference Include="Mono.Cecil">
             <HintPath>$(HollowKnightRefs)/Mono.Cecil.dll</HintPath>
@@ -111,9 +98,6 @@
         </Reference>
         <Reference Include="netstandard">
             <HintPath>$(HollowKnightRefs)/netstandard.dll</HintPath>
-        </Reference>
-        <Reference Include="Newtonsoft.Json">
-            <HintPath>$(HollowKnightRefs)/Newtonsoft.Json.dll</HintPath>
         </Reference>
         <Reference Include="PlayMaker">
             <HintPath>$(HollowKnightRefs)/PlayMaker.dll</HintPath>
@@ -351,6 +335,18 @@
         </Reference>
         <Reference Include="UnityEngine.XRModule">
             <HintPath>$(HollowKnightRefs)/UnityEngine.XRModule.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro">
+            <HintPath>$(HollowKnightRefs)/Unity.TextMeshPro.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx">
+            <HintPath>$(HollowKnightRefs)/BepInEx.dll</HintPath>
+        </Reference>
+        <Reference Include="InControl">
+            <HintPath>$(HollowKnightRefs)/InControl.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp-publicized">
+            <HintPath>$(HollowKnightRefs)/Assembly-CSharp-publicized.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
