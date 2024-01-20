@@ -1,13 +1,15 @@
 # MagicUI
 
-![GitHub Build Workflow Status](https://img.shields.io/github/actions/workflow/status/BadMagic100/HollowKnight.MagicUI/build.yml?branch=master)
-![GitHub Docs Workflow Status](https://img.shields.io/github/actions/workflow/status/BadMagic100/HollowKnight.MagicUI/github-pages.yml?branch=master&label=docs)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/BadMagic100/HollowKnight.MagicUI)
-![Downloads GitHub all releases](https://img.shields.io/github/downloads/BadMagic100/HollowKnight.MagicUI/total)
-
-A core mod for Hollow Knight that takes all the fuss of dealing with GameObjects behind the scenes,
+A core mod for Death's Door that takes all the fuss of dealing with GameObjects behind the scenes,
 allowing mod authors to seamlessly create in-game UIs for their mod with an easy-to-use hierarchical
 layout system inspired by WPF.
+
+MagicUI was [originally written for Hollow Knight][hk-mui]; this version is a
+direct port, featuring minimal changes to allow it to run within Death's Door
+instead of HK. The mod's public API is unchanged and the original documentation
+remains applicable.
+
+[hk-mui]: https://github.com/BadMagic100/HollowKnight.MagicUI
 
 ## Features
 
